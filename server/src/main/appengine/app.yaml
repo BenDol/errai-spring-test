@@ -1,0 +1,29 @@
+# [START runtime]
+runtime: java
+env: flex
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+
+runtime_config:  # Optional
+  jdk: openjdk8
+  server: tomcat8
+
+env_variables:
+  JAVA_USER_OPTS: -Djava.util.logging.config.file=WEB-INF/classes/logging.properties -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+  MAVEN_OPTS: -Xmx2048m
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 2
+  memory_gb: 3.2
+  disk_size_gb: 10
+  volumes:
+  - name: ramdisk1
+    volume_type: tmpfs
+    size_gb: 0.5
+# [END runtime]

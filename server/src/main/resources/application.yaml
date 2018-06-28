@@ -1,0 +1,94 @@
+# References: https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+spring:
+  resources:
+    static-locations: classpath:/static/
+    chain:
+      enabled: true
+
+  devtools:
+    restart:
+      enabled: false
+      exclude: static/**
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    properties.hibernate.storage_engine: innodb
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: false
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      scope: read,write
+      auto-approve-scopes: '.*'
+
+google:
+  client:
+    clientId: 254049430861-ukbrv8g3i0707hlktn3vheq1eb5ok154.apps.googleusercontent.com
+    clientSecret: GNiBYAEXf9IM2cmAPZrosu1A
+    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    scope:
+      - openid
+      - email
+      - profile
+  resource:
+    userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+    preferTokenInfo: true
+
+#server:
+#  compression:
+#    enabled: false # If response compression is enabled.
+#  context-path: # Context path of the application.
+#  display-name: application # Display name of the application.
+#  error:
+#    include-stacktrace: never # When to include a "stacktrace" attribute.
+#    path: /error # Path of the error controller.
+#    whitelabel:
+#      enabled: true # Enable the default error page displayed in browsers in case of a server error.
+#  port: 8080
+#  server-header: # Value to use for the Server response header (no header is sent if empty)
+#  servlet-path: / # Path of the main dispatcher servlet.
+  #ssl:
+#    enabled: # Enable SSL support.
+#    enabled-protocols: # Enabled SSL protocols.
+#    ciphers: # Supported SSL ciphers.
+#    client-auth: # Whether client authentication is wanted ("want") or needed ("need"). Requires a trust store.
+#    key-alias: # Alias that identifies the key in the key store.
+#    key-password: # Password used to access the key in the key store.
+#    key-store: # Path to the key store that holds the SSL certificate (typically a jks file).
+#    key-store-password: # Password used to access the key store.
+#    key-store-provider: # Provider for the key store.
+#    key-store-type: # Type of the key store.
+#    protocol: TLS # SSL protocol to use.
+#    trust-store: # Trust store that holds SSL certificates.
+#    trust-store-password: # Password used to access the trust store.
+#    trust-store-provider: # Provider for the trust store.
+#    trust-store-type: # Type of the trust store.
+#  tomcat:
+#    accept-count: # Maximum queue length for incoming connection requests when all possible request processing threads are in use.
+#    accesslog:
+#      enabled: false # Enable access log.
+#      directory: logs # Directory in which log files are created. Can be relative to the tomcat base dir or absolute.
+#    basedir: # Tomcat base directory. If not specified a temporary directory will be used.
+#    max-connections: # Maximum number of connections that the server will accept and process at any given time.
+#    max-threads: 0 # Maximum amount of worker threads.
+#    uri-encoding: UTF-8 # Character encoding to use to decode the URI.
+#  jetty:
+#    acceptors: # Number of acceptor threads to use.
+#    max-http-post-size: 0 # Maximum size in bytes of the HTTP post or put content.
+#    selectors: # Number of selector threads to use.

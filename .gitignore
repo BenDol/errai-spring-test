@@ -1,0 +1,9 @@
+gwt-unitCache/
+.errai/
+target/
+.idea/*
+!.idea/runConfigurations/
+!.idea/runConfigurations/*
+/*.iml
+/**/src/main/resources/static/WEB-INF/lib/*
+/**/src/main/resources/static/META-INF/MANIFEST.MF
