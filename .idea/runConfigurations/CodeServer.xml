@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CodeServer" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+    <module name="errai-spring-test-client" />
+    <option name="VM_PARAMETERS" value="-Xmx2g -Xms2g -Derrai.marshalling.very_short_names=true" />
+    <option name="SHELL_PARAMETERS" value="-noserver -war $PROJECT_DIR$/server/target/classes/static" />
+    <option name="RUN_PAGE" value="http://127.0.0.1:8080" />
+    <option name="USE_SUPER_DEV_MODE" value="true" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <method />
+  </configuration>
+</component>
